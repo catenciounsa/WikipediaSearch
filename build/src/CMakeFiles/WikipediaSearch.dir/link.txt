@@ -1,0 +1,1 @@
+/usr/bin/g++-9    -rdynamic CMakeFiles/WikipediaSearch.dir/main.cpp.o  -o WikipediaSearch  search/libsearch.a indexing/libindexing.a 

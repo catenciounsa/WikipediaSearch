@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/test/test.cpp
+iostream
+-
+

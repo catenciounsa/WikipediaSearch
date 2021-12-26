@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/cpp_test.dir/test.cpp.o  -o cpp_test  ../src/search/libsearch.a 

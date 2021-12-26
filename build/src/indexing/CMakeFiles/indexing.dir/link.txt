@@ -1,2 +1,0 @@
-/usr/bin/ar qc libindexing.a  CMakeFiles/indexing.dir/indexing.cpp.o
-/usr/bin/ranlib libindexing.a

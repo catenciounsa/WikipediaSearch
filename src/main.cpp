@@ -8,7 +8,7 @@ int main() {
     std::vector<std::string> files;
     readFiles(path, files);
 
-    cout << "Read files:"  << endl;
+    cout << "Read files from main.cpp:"  << endl;
     for( const std::string &file : files ){
         cout << file << endl;
     }

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code
+CMAKE_SOURCE_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build
+CMAKE_BINARY_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build
 
 # Include any dependencies generated for this target.
 include src/search/CMakeFiles/search.dir/depend.make
@@ -59,16 +59,16 @@ include src/search/CMakeFiles/search.dir/flags.make
 
 src/search/CMakeFiles/search.dir/search.cpp.o: src/search/CMakeFiles/search.dir/flags.make
 src/search/CMakeFiles/search.dir/search.cpp.o: ../src/search/search.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/search/CMakeFiles/search.dir/search.cpp.o"
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search && /usr/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/search.dir/search.cpp.o -c /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/search/search.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/search/CMakeFiles/search.dir/search.cpp.o"
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/search.dir/search.cpp.o -c /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/search/search.cpp
 
 src/search/CMakeFiles/search.dir/search.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/search.dir/search.cpp.i"
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/search/search.cpp > CMakeFiles/search.dir/search.cpp.i
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/search/search.cpp > CMakeFiles/search.dir/search.cpp.i
 
 src/search/CMakeFiles/search.dir/search.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search.dir/search.cpp.s"
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/search/search.cpp -o CMakeFiles/search.dir/search.cpp.s
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/search/search.cpp -o CMakeFiles/search.dir/search.cpp.s
 
 # Object files for target search
 search_OBJECTS = \
@@ -80,9 +80,9 @@ search_EXTERNAL_OBJECTS =
 src/search/libsearch.a: src/search/CMakeFiles/search.dir/search.cpp.o
 src/search/libsearch.a: src/search/CMakeFiles/search.dir/build.make
 src/search/libsearch.a: src/search/CMakeFiles/search.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsearch.a"
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search && $(CMAKE_COMMAND) -P CMakeFiles/search.dir/cmake_clean_target.cmake
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/search.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsearch.a"
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search && $(CMAKE_COMMAND) -P CMakeFiles/search.dir/cmake_clean_target.cmake
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/search.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/search/CMakeFiles/search.dir/build: src/search/libsearch.a
@@ -90,10 +90,10 @@ src/search/CMakeFiles/search.dir/build: src/search/libsearch.a
 .PHONY : src/search/CMakeFiles/search.dir/build
 
 src/search/CMakeFiles/search.dir/clean:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search && $(CMAKE_COMMAND) -P CMakeFiles/search.dir/cmake_clean.cmake
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search && $(CMAKE_COMMAND) -P CMakeFiles/search.dir/cmake_clean.cmake
 .PHONY : src/search/CMakeFiles/search.dir/clean
 
 src/search/CMakeFiles/search.dir/depend:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/search /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search/CMakeFiles/search.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/search /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search/CMakeFiles/search.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/search/CMakeFiles/search.dir/depend
 

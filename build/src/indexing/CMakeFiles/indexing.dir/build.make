@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code
+CMAKE_SOURCE_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build
+CMAKE_BINARY_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build
 
 # Include any dependencies generated for this target.
 include src/indexing/CMakeFiles/indexing.dir/depend.make
@@ -59,16 +59,16 @@ include src/indexing/CMakeFiles/indexing.dir/flags.make
 
 src/indexing/CMakeFiles/indexing.dir/indexing.cpp.o: src/indexing/CMakeFiles/indexing.dir/flags.make
 src/indexing/CMakeFiles/indexing.dir/indexing.cpp.o: ../src/indexing/indexing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/indexing/CMakeFiles/indexing.dir/indexing.cpp.o"
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing && /usr/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/indexing.dir/indexing.cpp.o -c /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/indexing/indexing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/indexing/CMakeFiles/indexing.dir/indexing.cpp.o"
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/indexing.dir/indexing.cpp.o -c /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/indexing/indexing.cpp
 
 src/indexing/CMakeFiles/indexing.dir/indexing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/indexing.dir/indexing.cpp.i"
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/indexing/indexing.cpp > CMakeFiles/indexing.dir/indexing.cpp.i
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/indexing/indexing.cpp > CMakeFiles/indexing.dir/indexing.cpp.i
 
 src/indexing/CMakeFiles/indexing.dir/indexing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/indexing.dir/indexing.cpp.s"
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing && /usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/indexing/indexing.cpp -o CMakeFiles/indexing.dir/indexing.cpp.s
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/indexing/indexing.cpp -o CMakeFiles/indexing.dir/indexing.cpp.s
 
 # Object files for target indexing
 indexing_OBJECTS = \
@@ -80,9 +80,9 @@ indexing_EXTERNAL_OBJECTS =
 src/indexing/libindexing.a: src/indexing/CMakeFiles/indexing.dir/indexing.cpp.o
 src/indexing/libindexing.a: src/indexing/CMakeFiles/indexing.dir/build.make
 src/indexing/libindexing.a: src/indexing/CMakeFiles/indexing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libindexing.a"
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing && $(CMAKE_COMMAND) -P CMakeFiles/indexing.dir/cmake_clean_target.cmake
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/indexing.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libindexing.a"
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing && $(CMAKE_COMMAND) -P CMakeFiles/indexing.dir/cmake_clean_target.cmake
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/indexing.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/indexing/CMakeFiles/indexing.dir/build: src/indexing/libindexing.a
@@ -90,10 +90,10 @@ src/indexing/CMakeFiles/indexing.dir/build: src/indexing/libindexing.a
 .PHONY : src/indexing/CMakeFiles/indexing.dir/build
 
 src/indexing/CMakeFiles/indexing.dir/clean:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing && $(CMAKE_COMMAND) -P CMakeFiles/indexing.dir/cmake_clean.cmake
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing && $(CMAKE_COMMAND) -P CMakeFiles/indexing.dir/cmake_clean.cmake
 .PHONY : src/indexing/CMakeFiles/indexing.dir/clean
 
 src/indexing/CMakeFiles/indexing.dir/depend:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/indexing /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing/CMakeFiles/indexing.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/indexing /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing/CMakeFiles/indexing.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/indexing/CMakeFiles/indexing.dir/depend
 

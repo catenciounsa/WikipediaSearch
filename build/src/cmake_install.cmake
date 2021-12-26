@@ -1,4 +1,4 @@
-# Install script for directory: /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src
+# Install script for directory: /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/search/cmake_install.cmake")
-  include("/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing/cmake_install.cmake")
+  include("/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/search/cmake_install.cmake")
+  include("/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing/cmake_install.cmake")
+  include("/home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/words/cmake_install.cmake")
 
 endif()
 

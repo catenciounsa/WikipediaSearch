@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code
+CMAKE_SOURCE_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build
+CMAKE_BINARY_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,14 +91,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/src/indexing/CMakeFiles/progress.marks
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles 0
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/src/indexing/CMakeFiles/progress.marks
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/clean
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/clean
 .PHONY : clean
 
 # The main clean target
@@ -108,22 +108,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/preinstall
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/preinstall
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/indexing/CMakeFiles/indexing.dir/rule:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/CMakeFiles/indexing.dir/rule
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f CMakeFiles/Makefile2 src/indexing/CMakeFiles/indexing.dir/rule
 .PHONY : src/indexing/CMakeFiles/indexing.dir/rule
 
 # Convenience name for target.
@@ -133,7 +133,7 @@ indexing: src/indexing/CMakeFiles/indexing.dir/rule
 
 # fast build rule for target.
 indexing/fast:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f src/indexing/CMakeFiles/indexing.dir/build.make src/indexing/CMakeFiles/indexing.dir/build
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f src/indexing/CMakeFiles/indexing.dir/build.make src/indexing/CMakeFiles/indexing.dir/build
 .PHONY : indexing/fast
 
 indexing.o: indexing.cpp.o
@@ -142,7 +142,7 @@ indexing.o: indexing.cpp.o
 
 # target to build an object file
 indexing.cpp.o:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f src/indexing/CMakeFiles/indexing.dir/build.make src/indexing/CMakeFiles/indexing.dir/indexing.cpp.o
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f src/indexing/CMakeFiles/indexing.dir/build.make src/indexing/CMakeFiles/indexing.dir/indexing.cpp.o
 .PHONY : indexing.cpp.o
 
 indexing.i: indexing.cpp.i
@@ -151,7 +151,7 @@ indexing.i: indexing.cpp.i
 
 # target to preprocess a source file
 indexing.cpp.i:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f src/indexing/CMakeFiles/indexing.dir/build.make src/indexing/CMakeFiles/indexing.dir/indexing.cpp.i
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f src/indexing/CMakeFiles/indexing.dir/build.make src/indexing/CMakeFiles/indexing.dir/indexing.cpp.i
 .PHONY : indexing.cpp.i
 
 indexing.s: indexing.cpp.s
@@ -160,7 +160,7 @@ indexing.s: indexing.cpp.s
 
 # target to generate assembly for a file
 indexing.cpp.s:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(MAKE) -f src/indexing/CMakeFiles/indexing.dir/build.make src/indexing/CMakeFiles/indexing.dir/indexing.cpp.s
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(MAKE) -f src/indexing/CMakeFiles/indexing.dir/build.make src/indexing/CMakeFiles/indexing.dir/indexing.cpp.s
 .PHONY : indexing.cpp.s
 
 # Help Target
@@ -187,6 +187,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

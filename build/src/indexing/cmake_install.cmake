@@ -1,4 +1,4 @@
-# Install script for directory: /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/src/indexing
+# Install script for directory: /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/src/indexing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

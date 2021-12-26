@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/CMakeLists.txt"
   "../src/indexing/CMakeLists.txt"
   "../src/search/CMakeLists.txt"
+  "../src/words/CMakeLists.txt"
   "../test/CMakeLists.txt"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
@@ -59,6 +60,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/search/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/indexing/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/words/CMakeFiles/CMakeDirectoryInformation.cmake"
   "test/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -95,5 +97,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/WikipediaSearch.dir/DependInfo.cmake"
   "src/search/CMakeFiles/search.dir/DependInfo.cmake"
   "src/indexing/CMakeFiles/indexing.dir/DependInfo.cmake"
+  "src/words/CMakeFiles/words.dir/DependInfo.cmake"
   "test/CMakeFiles/cpp_test.dir/DependInfo.cmake"
   )

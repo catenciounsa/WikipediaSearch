@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code
+CMAKE_SOURCE_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build
+CMAKE_BINARY_DIR = /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,9 +91,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/code/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/Documentos/Cursos/DOCTORADO/EstructuraDatos/NewTrabajoFinal/WikipediaSearch/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -525,6 +525,19 @@ indexing/fast:
 .PHONY : indexing/fast
 
 #=============================================================================
+# Target rules for targets named words
+
+# Build rule for target.
+words: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 words
+.PHONY : words
+
+# fast build rule for target.
+words/fast:
+	$(MAKE) -f src/words/CMakeFiles/words.dir/build.make src/words/CMakeFiles/words.dir/build
+.PHONY : words/fast
+
+#=============================================================================
 # Target rules for targets named cpp_test
 
 # Build rule for target.
@@ -577,6 +590,7 @@ help:
 	@echo "... WikipediaSearch"
 	@echo "... search"
 	@echo "... indexing"
+	@echo "... words"
 	@echo "... cpp_test"
 .PHONY : help
 

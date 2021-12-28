@@ -24,6 +24,29 @@ void instructionMessage() {
     std::cout << "  Words FILES=files/ STOPWORDS=stopwords/ TARGET=words-file.txt" << std::endl;
 }
 
+/**
+ * @brief This function verifies simple rules to verify if a word is candidate of stopword
+ * 
+ * @param word 
+ * @return true 
+ * @return false 
+ */
+bool isStopWord(const std::string &word) {
+    if( word.size() < 4 ) return true;
+    
+    // The follow rule verifies errors like 'ooooohhhhshhhh'
+    // It is commented because of its computational cost.
+    // If it is applied to all the words on Wikipedia, probably 
+    // will take x10 times the time normally required.
+    /*
+    std::set<char> freq;
+    for( char c : word ) freq.insert(c);
+    if( freq.size() < (word.size()/3) ) return true;
+    */
+
+    return false;
+}
+
 std::set<std::string> getStopWords(const std::string &stopwordsPath) {
     std::set<std::string> stopwords;
 
@@ -63,7 +86,7 @@ std::set<std::string> getUniqueWords(   const std::string &fromPath,
         }
         while( std::getline(file, line) ) {
             for( string word : getAllWords(line) ) {
-                if( stopwords.count(word) == 0 ) {
+                if( stopwords.count(word) == 0 || !isStopWord(word) ) {
                     unique_words.insert( word ) ;
                 }
             }

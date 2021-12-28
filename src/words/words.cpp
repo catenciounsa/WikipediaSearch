@@ -69,7 +69,7 @@ std::set<std::string> getUniqueWords(   const std::string &fromPath,
             }
         }
     }
-    cout << "Proceseed 100% " << files.size() << endl;
+    cout << "Processed 100% " << files.size() << endl;
     return unique_words;
 }
 

@@ -75,10 +75,12 @@ void updateIndex(fstream &index, int fileId, map<int,int> &frequency ) {
         int freqVal = keyval.second;
         index.seekg( wordIndex * sizeof(MaxKHeap) );
 
-        MaxKHeap *kheap;
-        index.read( (char*) kheap, sizeof(MaxKHeap) );
-        kheap->insert(fileId, freqVal);
-        index.write( (char*) kheap, sizeof(MaxKHeap) );
+        //MaxKHeap *kheap;
+        FixedMKH kheap;
+        index.read( (char*) &kheap, sizeof(MaxKHeap) );
+        //kheap->insert(fileId, freqVal);
+        kheap.insert(fileId, freqVal);
+        index.write( (char*) &kheap, sizeof(MaxKHeap) );
     }
 }
 
@@ -124,12 +126,20 @@ int main(int argc, char **argv) {
     fstream index( targetPath + INDEX_FILENAME, ios::in | ios::out | ios::binary );
     vector<string> files;
     readFiles(fromPath, files);
+    int nFiles = 0;
+    int jump = files.size() / 10;
+    int percentage = 10;
     for( const string &filename : files) {
         int fileId = atoi( filename.substr( 0, filename.size()-4 ).c_str() ); //"0001.txt => 1"
         map<int,int> frequency = readFrequency( fromPath + filename, wordIndex, stopwords );
         
         updateIndex(index, fileId, frequency);
+        if( percentage<100 && ((nFiles++)%jump ) == 0) {
+            cout << percentage << "%: " << nFiles << " proceseed" << std::endl;
+            percentage+=10;
+        }
     }
+    cout << "Processed 100% " << files.size() << endl;
 
     cout << "Great, the index was updated" << endl;
 

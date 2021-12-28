@@ -6,6 +6,8 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <map>
+#include <set>
 #include <algorithm>
 #include <regex>
 #include <filesystem>
@@ -75,7 +77,7 @@ vector<string> getAllWords(const string &seq) {
  * @param filepath 
  * @return vector<string> 
  */
-vector<string> readUniqueFile(const string &filepath) {
+vector<string> readLinesFrom(const string &filepath) {
         vector<string> lines;
         
         ifstream file(filepath);
@@ -100,7 +102,7 @@ set<string> readAllFiles( const string fromPath ) {
     readFiles( fromPath, files );
 
     for( const string &fileName : files ){
-        vector<string> linesFromFile = readUniqueFile( fromPath + fileName );
+        vector<string> linesFromFile = readLinesFrom( fromPath + fileName );
         for( string line : linesFromFile ) {
                 lines.insert( line );
         }
@@ -130,4 +132,13 @@ bool isStopWord(const std::string &word) {
     */
 
     return false;
+}
+
+map<string, int> transformIntoIndex(const string &filepath) {
+    map<string,int> wordIndex;
+    vector<string> lines = readLinesFrom(filepath);
+    for(int i=0; i<lines.size(); i++ ){
+        wordIndex[lines[i]] = i;
+    }
+    return wordIndex;
 }

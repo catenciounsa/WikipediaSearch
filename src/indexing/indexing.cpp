@@ -34,13 +34,32 @@ bool createFileIndex( const vector<string> &wordlist, const string &targetPath )
     if( !target ) {
         cout << "Error opening file" << endl; return false;
     }
-
+    cout << "Wordlist has size of " << wordlist.size() << endl;
     for (int i = 0; i < wordlist.size(); i++){
         FixedMKH tmp;
         target.write( (char*) &tmp, sizeof(FixedMKH) );
     }
     target.close();
     return true;
+}
+
+map<int,int> readFrequency(const string &filename, 
+                              map<string,int> &wordIndex,
+                              const set<string> &stopwords) {
+    ifstream file(filename);
+    map<int,int> msi;
+
+    string line;
+    while( getline(file,line) ) {
+        vector<string> words = getAllWords(line);
+        for( const string &word : words ) {
+            if( stopwords.count(word) == 0 && !isStopWord(word) ) {
+                msi[ wordIndex[word] ] ++;
+            }
+        }
+    }
+
+    return msi;
 }
 
 int main(int argc, char **argv) {
@@ -57,7 +76,7 @@ int main(int argc, char **argv) {
         string order = string( argv[i] );
         if( order.rfind("FILES=")==0 ) fromPath = order.substr(6);
         else if( order.rfind("STOPWORDS=")==0 )  stopwordsPath = order.substr(10);
-        else if( order.rfind("WORDLIST=")==0 ) wordlistPath = order.substr(7);
+        else if( order.rfind("WORDLIST=")==0 ) wordlistPath = order.substr(9);
         else if( order.rfind("TARGET=")==0 ) targetPath = order.substr(7);
     }
 
@@ -70,13 +89,25 @@ int main(int argc, char **argv) {
     set<string> stopwords = readAllFiles(stopwordsPath);
 
     // Read the wordlist
-    vector<string> wordlist = readUniqueFile(wordlistPath);
+    vector<string> wordlist = readLinesFrom(wordlistPath);
+    map<string,int> wordIndex = transformIntoIndex(wordlistPath);
 
     // Creates the file index
     bool successCreated = createFileIndex(wordlist, targetPath);
 
-    // Fill the index
-    
+    if( successCreated ) {
+        cout << "Great, index created in " << endl;
+        cout << " " << targetPath << INDEX_FILENAME << endl;
+    }
+
+    // Fill the index 
+    vector<string> files;
+    readFiles(fromPath, files);
+    for( const string &filename : files) {
+        int fileId = atoi( filename.substr( 0, filename.size()-4 ).c_str() ); //"0001.txt => 1"
+        map<int,int> frequency = readFrequency( fromPath + filename, wordIndex, stopwords );
+
+    }
 
     return 0;
 }

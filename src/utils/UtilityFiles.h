@@ -1,5 +1,11 @@
 /**
- * @brief This file contains different
+ * @file UtilityFiles.h
+ * @author Carlos E. Atencio-Torres (catencio@unsa.edu.pe)
+ * @brief 
+ * @version 0.1
+ * @date Dic 2021
+ * 
+ * @copyright Copyright (c) 2021
  * 
  */
 

@@ -1,3 +1,13 @@
+/**
+ * @file indexing.cpp
+ * @author Carlos E. Atencio-Torres (catencio@unsa.edu.pe)
+ * @brief 
+ * @version 0.1
+ * @date Dic 2021
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 #include <iostream>
 #include <set>
 #include <vector>
@@ -26,7 +36,7 @@ void instructionMessage() {
     cout << "  WORDLIST=/path/to/words-file"<< endl;
     cout << "  TARGET=/path/to/index/"<< endl;
     cout << "EXAMPLE:" << endl;
-    cout << "  Indexing FILES=files/ STOPWORDS=stopwords/ WORDLIST=words-file.txt TARGET=index/" << endl;
+    cout << "  Index FILES=files/ STOPWORDS=stopwords/ WORDLIST=words-file.txt TARGET=index/" << endl;
 }
 
 bool createFileIndex( const vector<string> &wordlist, const string &targetPath ) {
@@ -75,11 +85,12 @@ void updateIndex(fstream &index, int fileId, map<int,int> &frequency ) {
         int freqVal = keyval.second;
         index.seekg( wordIndex * sizeof(MaxKHeap) );
 
-        //MaxKHeap *kheap;
         FixedMKH kheap;
         index.read( (char*) &kheap, sizeof(MaxKHeap) );
-        //kheap->insert(fileId, freqVal);
+        
         kheap.insert(fileId, freqVal);
+
+        index.seekp( wordIndex * sizeof(MaxKHeap) );
         index.write( (char*) &kheap, sizeof(MaxKHeap) );
     }
 }

@@ -62,6 +62,26 @@ map<int,int> readFrequency(const string &filename,
     return msi;
 }
 
+/**
+ * @brief Updates the index file.
+ * 
+ * @param index FSTREAM
+ * @param fileId  number of file
+ * @param frequency map of frequency
+ */
+void updateIndex(fstream &index, int fileId, map<int,int> &frequency ) {
+    for( const pair<int,int> &keyval : frequency ) {
+        int wordIndex = keyval.first;
+        int freqVal = keyval.second;
+        index.seekg( wordIndex * sizeof(MaxKHeap) );
+
+        MaxKHeap *kheap;
+        index.read( (char*) kheap, sizeof(MaxKHeap) );
+        kheap->insert(fileId, freqVal);
+        index.write( (char*) kheap, sizeof(MaxKHeap) );
+    }
+}
+
 int main(int argc, char **argv) {
     welcomeIndexScriptMessage();
     if( argc != 5 ) {
@@ -101,13 +121,17 @@ int main(int argc, char **argv) {
     }
 
     // Fill the index 
+    fstream index( targetPath + INDEX_FILENAME, ios::in | ios::out | ios::binary );
     vector<string> files;
     readFiles(fromPath, files);
     for( const string &filename : files) {
         int fileId = atoi( filename.substr( 0, filename.size()-4 ).c_str() ); //"0001.txt => 1"
         map<int,int> frequency = readFrequency( fromPath + filename, wordIndex, stopwords );
-
+        
+        updateIndex(index, fileId, frequency);
     }
+
+    cout << "Great, the index was updated" << endl;
 
     return 0;
 }

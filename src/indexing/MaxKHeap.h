@@ -7,12 +7,12 @@ class MaxKHeap  {
 protected:
     int size;
     int data[MKHSIZE+1][2];
+
 public:
-    MaxKHeap() { size = 0; }
-    virtual void insert(int key, int val);
+    virtual void insert(int key, int val) = 0;
 };
 
-class FixedMKH : MaxKHeap {
+class FixedMKH : public MaxKHeap {
 public:
     void insert(int key, int val) {
         if( size < MKHSIZE ){

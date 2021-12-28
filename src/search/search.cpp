@@ -38,17 +38,68 @@ void instructionMessage() {
     cout << "-------------------------------------------" << endl;
 }
 
+/**
+ * @brief Calculates the intersecion of two vectors. Runs on linear time
+ * 
+ * @param v1 must be in increasing 
+ * @param v2 must be in increasing
+ * @return vector<int> the intersection of both sets
+ */
+vector<int> intersection(const vector<int> &v1, const vector<int> &v2) {
+    vector<int> ans;
+    int i=0,j=0;
+    while( i<v1.size() && j<v2.size() ){
+        if( v1[i] < v2[j] ) i++;
+        else if( v1[i] > v2[j] ) j++;
+        else { // match
+            ans.push_back( v1[i] );
+            i++; j++;
+        }
+    }
+    return ans;
+}
+
+vector<int> booleanRetrieval(const vector< vector<int> > &fileIdsPerWord) {
+    vector<int> ans = fileIdsPerWord[0];
+    for(int i=1; i<fileIdsPerWord.size(); i++){
+        ans = intersection( ans, fileIdsPerWord[i] );
+        if( ans.size() == 0 ) break;
+    }
+
+    return ans;
+}
+
 void searchWords( const vector<string> &words,
                   map<string,int> &wordIndex,
                   fstream &index ){
+
+    vector< vector<int> > fileIds;
     for( const string &word : words ) {
         int wordId = wordIndex[word];
         index.seekg( wordId * sizeof(MaxKHeap) );
 
+        // Retrieval from index
         FixedMKH kheap;
         index.read( (char*) &kheap, sizeof(MaxKHeap) );
-        cout << "For word: " << word << endl;
-        kheap.print();
+
+        vector<int> keys = kheap.getKeys(); // Optimization point
+        sort(keys.begin(), keys.end());
+        fileIds.push_back( keys );
+    }
+    vector<int> queryResult = booleanRetrieval( fileIds );
+    if( queryResult.empty() ) {
+        cout << "Sorry, there is no file containing your phrase" << endl;
+    } else {
+        cout << "The following files contains your answer" << endl;
+        int maxQueryResult = 10;
+        for( int fileId : queryResult ) {
+            cout << fileId << endl;
+
+            if( --maxQueryResult <= 0 ) {
+                cout << "and more" << endl;
+                return;
+            }
+        }
     }
 }
 

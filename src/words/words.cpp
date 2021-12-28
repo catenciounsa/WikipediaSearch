@@ -86,7 +86,7 @@ std::set<std::string> getUniqueWords(   const std::string &fromPath,
         }
         while( std::getline(file, line) ) {
             for( string word : getAllWords(line) ) {
-                if( stopwords.count(word) == 0 || !isStopWord(word) ) {
+                if( stopwords.count(word) == 0 && !isStopWord(word) ) {
                     unique_words.insert( word ) ;
                 }
             }

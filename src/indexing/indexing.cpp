@@ -12,6 +12,8 @@
 #include <set>
 #include <vector>
 #include <filesystem>
+#include <chrono>
+#include <ctime>
 #include "../utils/UtilityFiles.h"
 #include "MaxKHeap.h"
 
@@ -128,6 +130,8 @@ int main(int argc, char **argv) {
     map<string,int> wordIndex = transformIntoIndex(wordlistPath);
 
     // Creates the file index
+    auto timenow = chrono::system_clock::to_time_t(chrono::system_clock::now());
+    cout << "Starting... " << ctime(&timenow) << endl;
     bool successCreated = createFileIndex(wordlist, targetPath);
 
     if( successCreated ) {
@@ -140,16 +144,18 @@ int main(int argc, char **argv) {
     vector<string> files;
     readFiles(fromPath, files);
     int nFiles = 0;
-    int jump = files.size() / 10;
-    int percentage = 10;
+    int jump = files.size() / 100;
+    if( jump == 0 ) jump = 1;
+    int percentage = 1;
     for( const string &filename : files) {
         int fileId = atoi( filename.substr( 0, filename.size()-4 ).c_str() ); //"0001.txt => 1"
         map<int,int> frequency = readFrequency( fromPath + filename, wordIndex, stopwords );
         
         updateIndex(index, fileId, frequency);
-        if( percentage<100 && ((nFiles++)%jump ) == 0) {
-            cout << percentage << "%: " << nFiles << " proceseed" << std::endl;
-            percentage+=10;
+        if( (percentage<100) && (((nFiles++)%jump ) == 0)) {
+            timenow = chrono::system_clock::to_time_t(chrono::system_clock::now());
+            cout << percentage << "%: " << nFiles << " proceseed / " << ctime(&timenow);
+            percentage+=1;
         }
     }
     cout << "Processed 100% " << files.size() << endl;

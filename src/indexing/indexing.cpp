@@ -46,8 +46,9 @@ bool createFileIndex( const vector<string> &wordlist, const string &targetPath )
     }
     cout << "Wordlist has size of " << wordlist.size() << endl;
     for (int i = 0; i < wordlist.size(); i++){
-        FixedMKH tmp;
-        target.write( (char*) &tmp, sizeof(FixedMKH) );
+        //FixedMKH tmp;
+        OptimizedMaxKHeap tmp;
+        target.write( (char*) &tmp, sizeof(OptimizedMaxKHeap) );
     }
     target.close();
     return true;
@@ -85,7 +86,8 @@ void updateIndex(fstream &index, int fileId, map<int,int> &frequency ) {
         int freqVal = keyval.second;
         index.seekg( wordIndex * sizeof(MaxKHeap) );
 
-        FixedMKH kheap;
+        //FixedMKH kheap;
+        OptimizedMaxKHeap kheap;
         index.read( (char*) &kheap, sizeof(MaxKHeap) );
         
         kheap.insert(fileId, freqVal);

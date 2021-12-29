@@ -79,11 +79,12 @@ void searchWords( const vector<string> &words,
         index.seekg( wordId * sizeof(MaxKHeap) );
 
         // Retrieval from index
-        FixedMKH kheap;
-        index.read( (char*) &kheap, sizeof(MaxKHeap) );
+        //FixedMKH kheap;
+        OptimizedMaxKHeap kheap;
+        index.read( (char*) &kheap, sizeof(MaxKHeap) );        
 
         vector<int> keys = kheap.getKeys(); // Optimization point
-        sort(keys.begin(), keys.end());
+        sort(keys.begin(), keys.end());     // sort the values before store them
         fileIds.push_back( keys );
     }
     vector<int> queryResult = booleanRetrieval( fileIds );
@@ -137,10 +138,20 @@ int main(int argc, char **argv) {
     string query;
     cout << ">";
     while( getline(cin, query)  ) {
-        vector<string> words  = getAllWords(query);
-        if( words.size() >  0 ){
-            searchWords( words, wordIndex, index );
-        } 
+        vector<string> words1  = getAllWords(query);
+        if( words1.size() >  0 ){ //First filter (syntax)
+            vector<string> words2;
+            for( const string &word : words1) {
+                if( (stopwords.count(word) == 0) && !isStopWord(word) )
+                    words2.push_back( word );
+            }
+            if( words2.size() > 0) { //Second filter (stopwords)
+                searchWords( words2, wordIndex, index );
+            } else {
+                cout << "Sorry, such words chosen are very common" << endl;
+            }
+
+        }
         cout << ">";
     }
     

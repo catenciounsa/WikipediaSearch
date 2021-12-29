@@ -4,13 +4,13 @@
 #include <iostream>
 #include <vector>
 
-#define MKHSIZE 10
+#define MKHSIZE 1024
 #define INF 1000000000
 
 class MaxKHeap  {
 protected:
     int size;
-    int data[MKHSIZE+1][2];
+    int data[MKHSIZE][2];
 public:
     MaxKHeap() {
         size = 0;

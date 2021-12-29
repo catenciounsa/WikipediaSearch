@@ -31,7 +31,7 @@ void welcomeIndexScriptMessage() {
 }
 
 void instructionMessage() {
-    cout << "USAGE: Indexing <params> " << endl;
+    cout << "USAGE: Index <params> " << endl;
     cout << "PARAMS:" << endl;
     cout << "  FILES=/path/from/files/" << endl;
     cout << "  STOPWORDS=/path/to/stopwords/" << endl;

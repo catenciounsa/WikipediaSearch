@@ -148,3 +148,21 @@ map<string, int> transformIntoIndex(const string &filepath) {
     }
     return wordIndex;
 }
+
+
+vector< vector<string> > split( vector<string> &entries, int partition){
+    vector< vector<string> > ans; 
+    int sizePartition = entries.size() / partition;
+    int idx = 0;
+
+    while((--partition) > 0 ) { //it executes partition - 1 times
+        vector<string> chunk( entries.begin() + idx, entries.begin() + idx + sizePartition );
+        ans.push_back( chunk );
+        idx += sizePartition;
+    }
+    if( idx < entries.size() ) {
+        vector<string> chunk( entries.begin()+ idx, entries.end() );
+        ans.push_back( chunk );
+    }
+    return ans;
+}

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
-#include "UtilityFiles.h"
+#include "../utils/UtilityFiles.h"
 
 using namespace std;
 
@@ -63,13 +63,13 @@ std::set<std::string> getUniqueWords(   const std::string &fromPath,
         }
         while( std::getline(file, line) ) {
             for( string word : getAllWords(line) ) {
-                if( stopwords.count(word) == 0 ) {
+                if( stopwords.count(word) == 0 && !isStopWord(word) ) {
                     unique_words.insert( word ) ;
                 }
             }
         }
     }
-    cout << "Proceseed 100% " << files.size() << endl;
+    cout << "Processed 100% " << files.size() << endl;
     return unique_words;
 }
 

@@ -17,6 +17,7 @@ The project has four parts:
 
 ## 3. Indexing
 - It creates the inverted index
+![Alt text](Index-MaxKHeap.png "Index with MaxKHeap")
 
 ## 4. Search
 - This is a C++ console program that helps the user to search data in wikipedia

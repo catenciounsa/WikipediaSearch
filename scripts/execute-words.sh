@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #paths and files
-files="../data/AsciiAbba/"
+files="/media/carlos/Acer/Documents\ and\ Settings/carat/Mis\ documentos/DOCTORADO/EstructuraDatos/Wikipedia/Ascii/"
 stopwords="../data/stopwords/"
 target="generated/words-file.txt"
 

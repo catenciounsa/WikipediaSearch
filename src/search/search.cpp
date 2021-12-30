@@ -13,6 +13,8 @@
 #include <vector>
 #include <string>
 #include <filesystem>
+#include <sys/stat.h>
+
 #include "../utils/UtilityFiles.h"
 #include "../indexing/MaxKHeap.h"
 
@@ -60,7 +62,11 @@ vector<int> intersection(const vector<int> &v1, const vector<int> &v2) {
 }
 
 vector<int> booleanRetrieval(const vector< vector<int> > &fileIdsPerWord) {
-    vector<int> ans = fileIdsPerWord[0];
+
+    vector<int> ans;
+    if( fileIdsPerWord.empty() ) return ans;
+    
+    ans = fileIdsPerWord[0];
     for(int i=1; i<fileIdsPerWord.size(); i++){
         ans = intersection( ans, fileIdsPerWord[i] );
         if( ans.size() == 0 ) break;
@@ -69,12 +75,23 @@ vector<int> booleanRetrieval(const vector< vector<int> > &fileIdsPerWord) {
     return ans;
 }
 
+long GetFileSize(std::string filename)
+{
+    struct stat stat_buf;
+    int rc = stat(filename.c_str(), &stat_buf);
+    return rc == 0 ? stat_buf.st_size : -1;
+}
+
+
 void searchWords( const vector<string> &words,
                   map<string,int> &wordIndex,
                   fstream &index ){
 
     vector< vector<int> > fileIds;
     for( const string &word : words ) {
+        if( wordIndex.count(word) == 0) //If the word does not exist
+            continue;
+
         int wordId = wordIndex[word];
         index.seekg( wordId * sizeof(MaxKHeap) );
 
@@ -133,6 +150,10 @@ int main(int argc, char **argv) {
     
     // Reading the index file
     fstream index( indexPath, ios::in  | ios::binary );
+
+    long sizeFile = GetFileSize(indexPath);
+
+    cout << "Size of the file:" << sizeFile << ", egisters: " << (sizeFile / sizeof(MaxKHeap) )  << endl;
 
     // Reading the queries
     string query;

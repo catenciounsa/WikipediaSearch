@@ -17,7 +17,7 @@
 #include "../utils/UtilityFiles.h"
 #include "MaxKHeap.h"
 
-#define INDEX_FILENAME "wiki"
+#define INDEX_FILENAME "wiki.dat"
 
 using namespace std;
 
@@ -62,7 +62,7 @@ map<int,int> readFrequency(const string &filename,
     return msi;
 }
 
-void serialize( vector<MaxKHeap> &maxKheaps, const string &filename ) {
+void serialize( vector<OptimizedMaxKHeap> &maxKheaps, const string &filename ) {
     fstream index( filename, ios::app | ios::binary );
     for(int i=0; i< maxKheaps.size(); i++ ) {
         index.write( (char*) &maxKheaps[i], sizeof(OptimizedMaxKHeap) );
@@ -84,7 +84,7 @@ void indexBlock(vector<string> &vec,
         wordIndex[ vec[i] ] = i;
 
     // Creating the Heaps on memory
-    vector< MaxKHeap > maxHeaps;
+    vector< OptimizedMaxKHeap > maxHeaps;
     for( int i=0; i< vec.size(); i++ )
         maxHeaps.push_back( OptimizedMaxKHeap() );
 
@@ -119,7 +119,7 @@ void indexBlock(vector<string> &vec,
 
 int main(int argc, char **argv) {
     welcomeIndexScriptMessage();
-    if( argc != 5 ) {
+    if( argc != 6 ) {
         instructionMessage();
         return 0;
     }
@@ -142,6 +142,8 @@ int main(int argc, char **argv) {
     if( stopwordsPath[stopwordsPath.size()-1] != '/' ) stopwordsPath = stopwordsPath.substr(0, stopwordsPath.size()-1);
     if( targetPath[targetPath.size()-1] != '/' ) targetPath = targetPath.substr(0, targetPath.size()-1);
 
+
+
     // Reading the stopwords
     set<string> stopwords = readAllFiles(stopwordsPath);
 
@@ -157,10 +159,10 @@ int main(int argc, char **argv) {
 
     // Split the wordlist
     vector< vector<string> > wordListPartitioned = split( wordlist, npartition );
+    int nPartition = 1;
     for( vector<string> &vec : wordListPartitioned ) {
-
-        indexBlock( vec, fromPath, targetPath, files, stopwords );
-
+        cout << "PARTITION " << nPartition << endl;
+        indexBlock( vec, fromPath, targetPath+INDEX_FILENAME, files, stopwords );
     }
 
     return 0;

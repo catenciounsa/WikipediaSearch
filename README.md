@@ -34,5 +34,16 @@ The project has four parts:
 - For an entry fo _words[1..n]_ we search the occurrences of each word (if the word is not a stopword or if it exist in the unique word list)
 - The query result of each valid word were obtained and we apply a boolean strategy (information retrieval) where we try to find the intersection. It takes ** linear time**.
 
+## How to run it.
+- Once the project is downloaded, there is a **compile.sh** fil that will compile all the code
+- In the folder *script* will be the scripts. They must be configured first and run in this order:
+  - First the **execute-words.sh**. It will generate the unique words.
+  - After, the **execute-index.sh**. It will create the index.
+  - Finally, the **execute-search.sh**. It will open a prompt to make the queries
+
 ## Conclusions
 - The creation of the index created a file of 3.9GB and took 18 hours.
+- The queries are instantenious
+
+## Future works
+- The query does not have a proper treatment. For example UPPERCASE to lowercase. And if a sequence of words is provided, the way that the results are showed must be improved.

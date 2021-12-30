@@ -16,9 +16,12 @@
 #include <sys/stat.h>
 
 #include "../utils/UtilityFiles.h"
+#include "../utils/KMP.h"
 #include "../indexing/MaxKHeap.h"
 
 using namespace std;
+
+#define MAX_QUERY_RESULT 5
 
 void welcomeSearchScriptMessage() {
     cout << "*******************************************" << endl;
@@ -31,11 +34,13 @@ void welcomeSearchScriptMessage() {
 void instructionMessage() {
     cout << "USAGE: Search <params> " << endl;
     cout << "PARAMS:" << endl;
+    cout << "  FILES=/path/from/files/" << endl;
     cout << "  STOPWORDS=/path/to/stopwords/" << endl;
     cout << "  WORDLIST=/path/to/words-file"<< endl;
     cout << "  INDEXFILE=/path/to/index-file"<< endl;
+    cout << "  FILENAMESZ=size of the filename"<< endl;
     cout << "EXAMPLE:" << endl;
-    cout << "  Search STOPWORDS=stopwords/ INDEXFILE=index.dat" << endl;
+    cout << "  Search FILES=files/ STOPWORDS=stopwords/ WORDLIST=word-list.txt INDEXFILE=index.dat FILENAMESZ=2" << endl;
     cout << "FOLLOW there will appear a prompt '>' waiting for your phrases" << endl;
     cout << "-------------------------------------------" << endl;
 }
@@ -75,22 +80,35 @@ vector<int> booleanRetrieval(const vector< vector<int> > &fileIdsPerWord) {
     return ans;
 }
 
-long GetFileSize(std::string filename)
-{
-    struct stat stat_buf;
-    int rc = stat(filename.c_str(), &stat_buf);
-    return rc == 0 ? stat_buf.st_size : -1;
+void showResultInFile(const vector<string> &words, const string &fromPath, const string &filepath) {
+    cout << "----------------------------------------------------" << endl;
+    for( const string &word : words ) {
+        cout << "Showing the first appeareance of " << word << " in " << filepath << endl;
+        ifstream file(fromPath+filepath);
+        string line;
+        while(getline(file,line)) {
+            int idx = KMPSearch( word, line );
+            if( idx > -1 ) {
+                cout << line << endl;
+                return;
+            }
+        }
+    }
+    cout << "----------------------------------------------------" << endl;
 }
-
 
 void searchWords( const vector<string> &words,
                   map<string,int> &wordIndex,
-                  fstream &index ){
+                  fstream &index,
+                  string fromPath,
+                  int filenameSize){
 
     vector< vector<int> > fileIds;
     for( const string &word : words ) {
-        if( wordIndex.count(word) == 0) //If the word does not exist
+        if( wordIndex.count(word) == 0){ //If the word does not exist
+            cout << "Such word is not contained in the wordlist" << endl;
             continue;
+        }
 
         int wordId = wordIndex[word];
         index.seekg( wordId * sizeof(MaxKHeap) );
@@ -109,34 +127,40 @@ void searchWords( const vector<string> &words,
         cout << "Sorry, there is no file containing your phrase" << endl;
     } else {
         cout << "The following files contains your answer" << endl;
-        int maxQueryResult = 10;
+        
+        int queryResultCounter = 0;
         for( int fileId : queryResult ) {
-            cout << fileId << endl;
+            string queryResultFilename = numberWithZeros(fileId, filenameSize) + ".txt";
+            showResultInFile( words, fromPath, queryResultFilename );
 
-            if( --maxQueryResult <= 0 ) {
-                cout << "and more" << endl;
+            if( ++queryResultCounter > MAX_QUERY_RESULT ) {
+                cout << "and " << queryResult.size() - 10 <<" files more" << endl;
                 return;
             }
         }
+
     }
 }
 
 
 int main(int argc, char **argv) {
     welcomeSearchScriptMessage();
-    if( argc != 4 ) {
+    if( argc != 5 ) {
         instructionMessage();
         return 0;
     }
 
     // Reading the parameters
-    string stopwordsPath, wordlistPath, indexPath;
+    string fromPath,stopwordsPath, wordlistPath, indexPath;
+    int filenameSize;
     
     for(int i=1; i<argc; i++){
         string order = string( argv[i] );
-        if( order.rfind("STOPWORDS=")==0 )  stopwordsPath = order.substr(10);
+        if( order.rfind("FILES=") == 0) fromPath = order.substr(6);
+        else if( order.rfind("STOPWORDS=")==0 )  stopwordsPath = order.substr(10);
         else if( order.rfind("WORDLIST=")==0 ) wordlistPath = order.substr(9);
         else if( order.rfind("INDEXFILE=")==0 ) indexPath = order.substr(10);
+        else if( order.rfind("FILENAMESZ=")==0 ) filenameSize = atoi( order.substr(11).c_str() );
     }
 
     //Verifiying if the paths come with or without the '/' separator
@@ -151,10 +175,6 @@ int main(int argc, char **argv) {
     // Reading the index file
     fstream index( indexPath, ios::in  | ios::binary );
 
-    long sizeFile = GetFileSize(indexPath);
-
-    cout << "Size of the file:" << sizeFile << ", egisters: " << (sizeFile / sizeof(MaxKHeap) )  << endl;
-
     // Reading the queries
     string query;
     cout << ">";
@@ -167,7 +187,7 @@ int main(int argc, char **argv) {
                     words2.push_back( word );
             }
             if( words2.size() > 0) { //Second filter (stopwords)
-                searchWords( words2, wordIndex, index );
+                searchWords( words2, wordIndex, index, fromPath, filenameSize );
             } else {
                 cout << "Sorry, such words chosen are very common" << endl;
             }

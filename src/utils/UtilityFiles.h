@@ -166,3 +166,12 @@ vector< vector<string> > split( vector<string> &entries, int partition){
     }
     return ans;
 }
+
+string numberWithZeros( int val, int filenameSize ) {
+    char format[16], strval[16];
+    sprintf(format, "%%0%dd", filenameSize);
+    sprintf(strval,  format, val );
+    return string(strval);
+}
+
+

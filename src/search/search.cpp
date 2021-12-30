@@ -83,7 +83,8 @@ vector<int> booleanRetrieval(const vector< vector<int> > &fileIdsPerWord) {
 void showResultInFile(const vector<string> &words, const string &fromPath, const string &filepath) {
     cout << "----------------------------------------------------" << endl;
     for( const string &word : words ) {
-        cout << "Showing the first appeareance of " << word << " in " << filepath << endl;
+        cout << "Showing the first appeareance of \"" << word << "\" in " << filepath << endl;
+        cout << endl;
         ifstream file(fromPath+filepath);
         string line;
         while(getline(file,line)) {
@@ -145,7 +146,7 @@ void searchWords( const vector<string> &words,
 
 int main(int argc, char **argv) {
     welcomeSearchScriptMessage();
-    if( argc != 5 ) {
+    if( argc != 6 ) {
         instructionMessage();
         return 0;
     }

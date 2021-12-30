@@ -1,0 +1,133 @@
+***************************************
+Welcome to WikipediaSearch 
+----------------------------------------
+This script creates the index of words
+***************************************
+Starting... Wed Dec 29 12:25:03 2021
+
+Great, index created in 
+ generated/wiki.dat
+1%: 1 proceseed / Wed Dec 29 12:25:07 2021
+2%: 16080 proceseed / Wed Dec 29 12:34:29 2021
+^C
+
+real	11m0,608s
+user	1m33,734s
+sys	0m23,497s
+carlos@vicky:/media/carlos/DL/Doctorado/Wikipedia/WikipediaSearch/scripts$ time ./execute-index.sh 
+***************************************
+Welcome to WikipediaSearch 
+----------------------------------------
+This script creates the index of words
+***************************************
+Starting... Wed Dec 29 12:36:43 2021
+
+Wordlist has size of 4869736
+Great, index created in 
+ generated/wiki.dat
+1%: 1 proceseed / Wed Dec 29 12:55:10 2021
+2%: 16080 proceseed / Wed Dec 29 13:06:25 2021
+3%: 32159 proceseed / Wed Dec 29 13:17:55 2021
+4%: 48238 proceseed / Wed Dec 29 13:27:44 2021
+5%: 64317 proceseed / Wed Dec 29 13:37:44 2021
+6%: 80396 proceseed / Wed Dec 29 13:49:57 2021
+7%: 96475 proceseed / Wed Dec 29 13:59:46 2021
+8%: 112554 proceseed / Wed Dec 29 14:10:31 2021
+9%: 128633 proceseed / Wed Dec 29 14:20:46 2021
+10%: 144712 proceseed / Wed Dec 29 14:29:43 2021
+11%: 160791 proceseed / Wed Dec 29 14:39:43 2021
+12%: 176870 proceseed / Wed Dec 29 14:50:25 2021
+13%: 192949 proceseed / Wed Dec 29 15:01:02 2021
+14%: 209028 proceseed / Wed Dec 29 15:11:03 2021
+15%: 225107 proceseed / Wed Dec 29 15:20:48 2021
+16%: 241186 proceseed / Wed Dec 29 15:31:24 2021
+17%: 257265 proceseed / Wed Dec 29 15:42:14 2021
+18%: 273344 proceseed / Wed Dec 29 15:52:36 2021
+19%: 289423 proceseed / Wed Dec 29 16:03:02 2021
+20%: 305502 proceseed / Wed Dec 29 16:13:04 2021
+21%: 321581 proceseed / Wed Dec 29 16:22:34 2021
+22%: 337660 proceseed / Wed Dec 29 16:33:31 2021
+23%: 353739 proceseed / Wed Dec 29 16:44:12 2021
+24%: 369818 proceseed / Wed Dec 29 16:54:44 2021
+25%: 385897 proceseed / Wed Dec 29 17:05:10 2021
+26%: 401976 proceseed / Wed Dec 29 17:15:28 2021
+27%: 418055 proceseed / Wed Dec 29 17:26:09 2021
+28%: 434134 proceseed / Wed Dec 29 17:36:59 2021
+29%: 450213 proceseed / Wed Dec 29 17:47:09 2021
+30%: 466292 proceseed / Wed Dec 29 17:57:30 2021
+31%: 482371 proceseed / Wed Dec 29 18:08:06 2021
+32%: 498450 proceseed / Wed Dec 29 18:18:48 2021
+33%: 514529 proceseed / Wed Dec 29 18:29:48 2021
+34%: 530608 proceseed / Wed Dec 29 18:41:01 2021
+35%: 546687 proceseed / Wed Dec 29 18:51:27 2021
+36%: 562766 proceseed / Wed Dec 29 19:01:34 2021
+37%: 578845 proceseed / Wed Dec 29 19:12:27 2021
+38%: 594924 proceseed / Wed Dec 29 19:22:59 2021
+39%: 611003 proceseed / Wed Dec 29 19:33:52 2021
+40%: 627082 proceseed / Wed Dec 29 19:45:20 2021
+41%: 643161 proceseed / Wed Dec 29 19:55:59 2021
+42%: 659240 proceseed / Wed Dec 29 20:06:28 2021
+43%: 675319 proceseed / Wed Dec 29 20:17:04 2021
+44%: 691398 proceseed / Wed Dec 29 20:28:02 2021
+45%: 707477 proceseed / Wed Dec 29 20:38:11 2021
+46%: 723556 proceseed / Wed Dec 29 20:49:02 2021
+47%: 739635 proceseed / Wed Dec 29 20:59:44 2021
+48%: 755714 proceseed / Wed Dec 29 21:10:09 2021
+49%: 771793 proceseed / Wed Dec 29 21:20:43 2021
+50%: 787872 proceseed / Wed Dec 29 21:31:56 2021
+51%: 803951 proceseed / Wed Dec 29 21:41:54 2021
+52%: 820030 proceseed / Wed Dec 29 21:52:21 2021
+53%: 836109 proceseed / Wed Dec 29 22:02:34 2021
+54%: 852188 proceseed / Wed Dec 29 22:12:57 2021
+55%: 868267 proceseed / Wed Dec 29 22:23:24 2021
+56%: 884346 proceseed / Wed Dec 29 22:34:04 2021
+57%: 900425 proceseed / Wed Dec 29 22:45:27 2021
+58%: 916504 proceseed / Wed Dec 29 22:55:43 2021
+59%: 932583 proceseed / Wed Dec 29 23:06:20 2021
+60%: 948662 proceseed / Wed Dec 29 23:16:52 2021
+61%: 964741 proceseed / Wed Dec 29 23:27:02 2021
+62%: 980820 proceseed / Wed Dec 29 23:37:33 2021
+63%: 996899 proceseed / Wed Dec 29 23:47:54 2021
+64%: 1012978 proceseed / Wed Dec 29 23:58:41 2021
+65%: 1029057 proceseed / Thu Dec 30 00:09:09 2021
+66%: 1045136 proceseed / Thu Dec 30 00:20:07 2021
+67%: 1061215 proceseed / Thu Dec 30 00:30:22 2021
+68%: 1077294 proceseed / Thu Dec 30 00:41:04 2021
+69%: 1093373 proceseed / Thu Dec 30 00:51:33 2021
+70%: 1109452 proceseed / Thu Dec 30 01:02:18 2021
+71%: 1125531 proceseed / Thu Dec 30 01:12:49 2021
+72%: 1141610 proceseed / Thu Dec 30 01:23:18 2021
+73%: 1157689 proceseed / Thu Dec 30 01:33:52 2021
+74%: 1173768 proceseed / Thu Dec 30 01:44:54 2021
+75%: 1189847 proceseed / Thu Dec 30 01:55:14 2021
+76%: 1205926 proceseed / Thu Dec 30 02:06:08 2021
+77%: 1222005 proceseed / Thu Dec 30 02:16:25 2021
+78%: 1238084 proceseed / Thu Dec 30 02:26:35 2021
+79%: 1254163 proceseed / Thu Dec 30 02:37:13 2021
+80%: 1270242 proceseed / Thu Dec 30 02:47:32 2021
+81%: 1286321 proceseed / Thu Dec 30 02:57:47 2021
+82%: 1302400 proceseed / Thu Dec 30 03:08:05 2021
+83%: 1318479 proceseed / Thu Dec 30 03:18:54 2021
+84%: 1334558 proceseed / Thu Dec 30 03:29:15 2021
+85%: 1350637 proceseed / Thu Dec 30 03:39:17 2021
+86%: 1366716 proceseed / Thu Dec 30 03:49:53 2021
+87%: 1382795 proceseed / Thu Dec 30 04:00:35 2021
+88%: 1398874 proceseed / Thu Dec 30 04:11:07 2021
+89%: 1414953 proceseed / Thu Dec 30 04:21:40 2021
+90%: 1431032 proceseed / Thu Dec 30 04:32:54 2021
+91%: 1447111 proceseed / Thu Dec 30 04:43:42 2021
+92%: 1463190 proceseed / Thu Dec 30 04:54:18 2021
+93%: 1479269 proceseed / Thu Dec 30 05:04:39 2021
+94%: 1495348 proceseed / Thu Dec 30 05:15:33 2021
+95%: 1511427 proceseed / Thu Dec 30 05:25:53 2021
+96%: 1527506 proceseed / Thu Dec 30 05:36:19 2021
+97%: 1543585 proceseed / Thu Dec 30 05:47:33 2021
+98%: 1559664 proceseed / Thu Dec 30 05:58:00 2021
+99%: 1575743 proceseed / Thu Dec 30 06:08:44 2021
+Processed 100% 1607931
+Great, the index was updated
+
+real	1073m36,830s
+user	122m45,012s
+sys	32m2,905s
+

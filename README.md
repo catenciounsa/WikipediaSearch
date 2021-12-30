@@ -9,6 +9,7 @@ The project has four parts:
 - The code is in python and c++.
   - Python was choose because of its facility to deal with extend ascii characters.
   - C++ was choose because of its speed to process documents.
+- The preprocessing converted files to ascii in lower case. If some files did not match (as chinese documents) were discarted.
 - At the end of the preprocessing, only 1607931 files where choosen ( 12GB of data ).
 
 ## 2. Words
@@ -35,4 +36,3 @@ The project has four parts:
 
 ## Conclusions
 - The creation of the index created a file of 3.9GB and took 18 hours.
-- The sear
